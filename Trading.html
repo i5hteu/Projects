@@ -1,9 +1,9 @@
-<!doctype html>
+!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stock Details</title>
+    <title>OMX Stock Chart</title>
     <style>
       :root {
         --gap-size: 32px;
@@ -94,8 +94,7 @@
       .span-full-grid,
       #symbol-info,
       #advanced-chart,
-      #company-profile,
-      #fundamental-data {
+      #company-profile,Z      #fundamental-data {
         grid-column: span 2;
       }
 
@@ -158,7 +157,7 @@
   </head>
   <body>
     <header>
-      <a id="site-logo" href="#">TradingVista</a>
+      <a id="site-logo" href="#">OMX</a>
       <input type="search" placeholder="Search..." />
     </header>
     <nav id="ticker-tape">
@@ -178,15 +177,15 @@
             },
             {
             "description": "",
-            "proName": "NASDAQ:AAPL"
+            "proName": "IG:RUSSELL"
             },
             {
             "description": "",
-            "proName": "NASDAQ:NVDA"
+            "proName": "CAPITALCOM:NAS100"
             },
             {
             "description": "",
-            "proName": "NASDAQ:MSFT"
+            "proName": "BLACKBULL:US30"
             },
             {
             "description": "",
@@ -268,45 +267,48 @@
             async
           >
               {
-              "autosize": true,
-              "symbol": "OMXSTO:OMXS30",
-              "interval": "D",
-              "timezone": "Etc/UTC",
-              "theme": "light",
-              "style": "1",
-              "locale": "en",
-              "allow_symbol_change": true,
-              "calendar": false,
-              "support_host": "https://www.tradingview.com"
+  "allow_symbol_change": true,
+  "calendar": false,
+  "details": true,
+  "hide_side_toolbar": true,
+  "hide_top_toolbar": true,
+  "hide_legend": false,
+  "hide_volume": false,
+  "hotlist": false,
+  "interval": "1",
+  "locale": "en",
+  "save_image": true,
+  "style": "1",
+  "symbol": "OMXSTO:OMXS30",
+  "theme": "light",
+  "timezone": "Etc/UTC",
+  "backgroundColor": "#ffffff",
+  "gridColor": "rgba(46, 46, 46, 0.06)",
+  "watchlist": [],
+  "withdateranges": false,
+  "compareSymbols": [],
+  "studies": [
+    "STD;Visible%1Average%1Price",
+    "STD;Technical%1Ratings",
+    "STD;Median"
+  ],
+  "autosize": true
             }
           </script>
         </div>
         <!-- TradingView Widget END -->
-      </section>
-      <section id="fundamental-data">
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script
-            type="text/javascript"
-            src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js"
-            async
-          >
-              {
-              "colorTheme": "light",
-              "isTransparent": true,
-              "largeChartUrl": "",
-              "displayMode": "adaptive",
-              "width": "100%",
-              "height": "100%",
-              "symbol": "NASDAQ:AAPL",
-              "locale": "en"
-            }
-          </script>
-        </div>
-        <!-- TradingView Widget END -->
-      </section>
-      <section id="technical-analysis">
+       </section>
+    <section>
+        <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-mini-chart.js"></script>
+
+        <tv-mini-chart symbol="FX:USDSEK" style="width: 400px; height: 300px"></tv-mini-chart>
+    </section>
+    <section>
+        <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-mini-chart.js"></script>
+
+        <tv-mini-chart symbol="FX_IDC:USDEUR" style="width: 400px; height: 300px"></tv-mini-chart>
+    </section>
+    <section id="technical-analysis">
         <!-- TradingView Widget BEGIN -->
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
@@ -330,29 +332,33 @@
         </div>
         <!-- TradingView Widget END -->
       </section>
-      <section id="top-stories">
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script
-            type="text/javascript"
-            src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js"
-            async
-          >
-              {
-              "feedMode": "symbol",
-              "symbol": "NASDAQ:AAPL",
-              "colorTheme": "light",
-              "isTransparent": true,
-              "displayMode": "regular",
-              "width": "100%",
-              "height": "100%",
-              "locale": "en"
-            }
-          </script>
-        </div>
-        <!-- TradingView Widget END -->
-      </section>
+        <section>
+            <!-- TradingView Widget BEGIN -->
+ <div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a rel="noopener nofollow" target="_blank"><span class="blue-text">OMXS30 Heat Map</span></a><span class="trademark"></span></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js" async>
+  {
+  "dataSource": "OMXS30",
+  "blockSize": "market_cap_basic",
+  "blockColor": "change",
+  "grouping": "sector",
+  "locale": "en",
+  "symbolUrl": "",
+  "colorTheme": "light",
+  "exchanges": [],
+  "hasTopBar": false,
+  "isDataSetEnabled": false,
+  "isZoomEnabled": true,
+  "hasSymbolTooltip": true,
+  "isMonoSize": false,
+  "width": "100%",
+  "height": "100%"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+        </section>
       <section id="powered-by-tv">
         <svg xmlns="http://www.w3.org/2000/svg" width="157" height="21">
           <use
